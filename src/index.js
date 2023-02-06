@@ -44,7 +44,9 @@ function renderCountries(countries) {
     <div>
       <p><b>Capital:</b> ${capital}</p>
       <p><b>Population:</b> ${population}</p>
-      <p><b>Languages:</b> ${Object.values(languages).join(', ')}</p>
+      <p><b>Languages:</b> ${languages
+        .map(language => language.name)
+        .join(', ')}</p>
     </div>`;
 
     refs.countryInfo.innerHTML = markup;
